@@ -346,7 +346,7 @@ _Pvt_Extensions
 .paket/paket.exe
 paket-files/
 
-/Migrations
+Migrations/
 
 .sqlite
 
