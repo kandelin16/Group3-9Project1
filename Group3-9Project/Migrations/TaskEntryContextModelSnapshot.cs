@@ -26,7 +26,7 @@ namespace Group3_9Project.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
 
                     b.HasData(
                         new

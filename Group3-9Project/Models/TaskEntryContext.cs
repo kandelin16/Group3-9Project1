@@ -14,7 +14,7 @@ namespace Group3_9Project.Models
         }
         //public DbSet<TaskEntryContext> Tasks { get; set; }
         public DbSet<TaskEntry> TaskEntries { get; set; } // not totally sure on this part
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Category> Category { get; set; }
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<Category>().HasData(

@@ -2,12 +2,12 @@
 
 namespace Group3_9Project.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Categories",
+                name: "Category",
                 columns: table => new
                 {
                     CategoryId = table.Column<int>(nullable: false)
@@ -16,7 +16,7 @@ namespace Group3_9Project.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.CategoryId);
+                    table.PrimaryKey("PK_Category", x => x.CategoryId);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,30 +35,30 @@ namespace Group3_9Project.Migrations
                 {
                     table.PrimaryKey("PK_TaskEntries", x => x.TaskId);
                     table.ForeignKey(
-                        name: "FK_TaskEntries_Categories_CategoryId",
+                        name: "FK_TaskEntries_Category_CategoryId",
                         column: x => x.CategoryId,
-                        principalTable: "Categories",
+                        principalTable: "Category",
                         principalColumn: "CategoryId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
-                table: "Categories",
+                table: "Category",
                 columns: new[] { "CategoryId", "CategoryName" },
                 values: new object[] { 1, "Home" });
 
             migrationBuilder.InsertData(
-                table: "Categories",
+                table: "Category",
                 columns: new[] { "CategoryId", "CategoryName" },
                 values: new object[] { 2, "School" });
 
             migrationBuilder.InsertData(
-                table: "Categories",
+                table: "Category",
                 columns: new[] { "CategoryId", "CategoryName" },
                 values: new object[] { 3, "Work" });
 
             migrationBuilder.InsertData(
-                table: "Categories",
+                table: "Category",
                 columns: new[] { "CategoryId", "CategoryName" },
                 values: new object[] { 4, "Church" });
 
@@ -79,7 +79,7 @@ namespace Group3_9Project.Migrations
                 name: "TaskEntries");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Category");
         }
     }
 }

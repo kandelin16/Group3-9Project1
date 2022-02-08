@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Group3_9Project.Migrations
 {
     [DbContext(typeof(TaskEntryContext))]
-    [Migration("20220208170231_initial")]
-    partial class initial
+    [Migration("20220208202208_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,7 +28,7 @@ namespace Group3_9Project.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
 
                     b.HasData(
                         new
