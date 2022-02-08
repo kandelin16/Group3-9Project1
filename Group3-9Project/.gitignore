@@ -346,6 +346,10 @@ _Pvt_Extensions
 .paket/paket.exe
 paket-files/
 
+Migrations/
+
+.sqlite
+
 # FAKE - F# Make
 .fake/
 
