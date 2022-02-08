@@ -28,6 +28,11 @@ namespace Group3_9Project.Controllers
             return View();
         }
 
+        public IActionResult Quadrant()
+        {
+            return View();
+        }
+
 
     }
 }
