@@ -75,7 +75,7 @@
                                             <tr>
                                                 <td>@te.Task</td>
                                                 <td>@te.DueDate</td>
-                                                <td>@te.Category</td>
+                                                <td>@te.Category.CategoryName</td>
                                                 <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@te.TaskId">Update</a></td>
                                                 <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@te.TaskId">Delete</a></td>
                                                 <td><input type="checkbox" /></td>
@@ -110,7 +110,7 @@
                                             <tr>
                                                 <td>@te.Task</td>
                                                 <td>@te.DueDate</td>
-                                                <td>@te.Category</td>
+                                                <td>@te.Category.CategoryName</td>
                                                 <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@te.TaskId">Update</a></td>
                                                 <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@te.TaskId">Delete</a></td>
                                                 <td><input type="checkbox" /></td>
@@ -159,63 +159,9 @@
                 </tbody>
             </table>
        
-<br/>
 
 
-<div class="containter">
-    <div class="row text-center">
-        <div class="col font-weight-bold">
-            Steven Covey's Time Management Matrix
-        </div>
-    </div>
-    <div class="row">
-        <div class="col"></div>
-        <div class="col">
-            Urgent
-        </div>
-        <div class="col">
-             Not Urgent
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col">Important</div>
-        <div class="col">
-            Quadrant 1
-            @foreach (var te in Model)
-            {
-                @if (te.Quadrant == 1)
-                {
-                   
-                    @te.Task 
-                    @te.DueDate 
-                    @te.Category.CategoryName
-                    <a>Update</a>
-                    <a>Delete</a>
-                     <input type="checkbox" />
-
-                    
-                }
-            }
 
 
-        </div>
-        <div class="col">
-            Quadrant 2
-            <br />
-            Task #2
-        </div>
+            
 
-    </div>
-    <div class="row">
-        <div class="col">Not Important</div>
-        <div class="col">
-            Quadrant 3
-            <br />Task #3
-        </div>
-        <div class="col">
-            Quadrant 4
-            <br />Task #4
-        </div>
-    </div>
-</div>
