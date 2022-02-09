@@ -7,153 +7,157 @@
 <h1>Steven Covey's Time Management Matrix</h1>
 
 <br />
-<table class="table table-bordered">
-    <thead class="font-weight-bold">
-        <tr>
-            <td></td>
-            <td>Urgent</td>
-            <td>Not Urgent</td>
-        </tr>
-           
-    </thead>
-    <tbody>
-        <tr>
-            <td class="font-weight-bold">Important</td>
-            <td><table class="table">
-                Quadrant 1
-                    <thead class="font-weight-bold">
-                        <tr>
-                            <td>Task</td>
-                            <td>Due Date</td>
-                            <td>Category</td>
-                            <td>Update</td>
-                            <td>Delete</td>
-                            <td>Completed?</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                       @foreach (var te in Model)
-                       {
-                           @if (te.Quadrant == 1)
-                           {
-                            <tr>
-                                <td>@te.Task</td>
-                                <td>@te.DueDate</td>
-                                <td>@te.Category.CategoryName</td>
-                                <td><a>Update</a></td>
-                                <td><a>Delete</a></td>
-                                <td><input type="checkbox" /></td>
 
-                            </tr>
-                               }
-                           }
-                    </tbody>
-                </table></td>
+            <table class="table table-bordered">
+                <thead class="font-weight-bold">
+                    <tr>
+                        <td></td>
+                        <td>Urgent</td>
+                        <td>Not Urgent</td>
+                    </tr>
 
-            <td>
-                <table class="table">
-                    Quadrant 2
-                    <thead class="font-weight-bold">
-                        <tr>
-                            <td>Task</td>
-                            <td>Due Date</td>
-                            <td>Category</td>
-                            <td>Update</td>
-                            <td>Delete</td>
-                            <td>Completed?</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var te in Model)
-                        {
-                            @if (te.Quadrant == 2)
-                            {
-                                <tr>
-                                    <td>@te.Task</td>
-                                    <td>@te.DueDate</td>
-                                    <td>@te.Category</td>
-                                    <td><a>Update</a></td>
-                                    <td><a>Delete</a></td>
-                                    <td><input type="checkbox" /></td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="font-weight-bold">Important</td>
+                        <td>
+                            <table class="table">
+                                Quadrant 1
+                                <thead class="font-weight-bold">
+                                    <tr>
+                                        <td>Task</td>
+                                        <td>Due Date</td>
+                                        <td>Category</td>
+                                        <td>Update</td>
+                                        <td>Delete</td>
+                                        <td>Completed?</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var te in Model)
+                                    {
+                                        @if (te.Quadrant == 1)
+                                        {
+                                            <tr>
+                                                <td>@te.Task</td>
+                                                <td>@te.DueDate</td>
+                                                <td>@te.Category.CategoryName</td>
+                                                <td><a>Update</a></td>
+                                                <td><a>Delete</a></td>
+                                                <td><input type="checkbox" /></td>
 
-                                </tr>
-                            }
-                        }
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td class="font-weight-bold">Not Important</td>
-            <td>
-                <table class="table">
-                    Quadrant 3
-                    <thead class="font-weight-bold">
-                        <tr>
-                            <td>Task</td>
-                            <td>Due Date</td>
-                            <td>Category</td>
-                            <td>Update</td>
-                            <td>Delete</td>
-                            <td>Completed?</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var te in Model)
-                        {
-                            @if (te.Quadrant == 3)
-                            {
-                                <tr>
-                                    <td>@te.Task</td>
-                                    <td>@te.DueDate</td>
-                                    <td>@te.Category</td>
-                                    <td><a>Update</a></td>
-                                    <td><a>Delete</a></td>
-                                    <td><input type="checkbox" /></td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </td>
 
-                                </tr>
-                            }
-                        }
-                    </tbody>
-                </table>
-            </td>
-            <td>
-                <table class="table">
-                    Quadrant 4
-                    <thead class="font-weight-bold">
-                        <tr>
-                            <td>Task</td>
-                            <td>Due Date</td>
-                            <td>Category</td>
-                            <td>Update</td>
-                            <td>Delete</td>
-                            <td>Completed?</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var te in Model)
-                        {
-                            @if (te.Quadrant == 4)
-                            {
-                                <tr>
-                                    <td>@te.Task</td>
-                                    <td>@te.DueDate</td>
-                                    <td>@te.Category.CategoryName</td>
-                                    <td><a>Update</a></td>
-                                    <td><a>Delete</a></td>
-                                    <td><input type="checkbox" /></td>
+                        <td>
+                            <table class="table">
+                                Quadrant 2
+                                <thead class="font-weight-bold">
+                                    <tr>
+                                        <td>Task</td>
+                                        <td>Due Date</td>
+                                        <td>Category</td>
+                                        <td>Update</td>
+                                        <td>Delete</td>
+                                        <td>Completed?</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var te in Model)
+                                    {
+                                        @if (te.Quadrant == 2)
+                                        {
+                                            <tr>
+                                                <td>@te.Task</td>
+                                                <td>@te.DueDate</td>
+                                                <td>@te.Category</td>
+                                                <td><a>Update</a></td>
+                                                <td><a>Delete</a></td>
+                                                <td><input type="checkbox" /></td>
 
-                                </tr>
-                            }
-                        }
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-        
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-bold">Not Important</td>
+                        <td>
+                            <table class="table">
+                                Quadrant 3
+                                <thead class="font-weight-bold">
+                                    <tr>
+                                        <td>Task</td>
+                                        <td>Due Date</td>
+                                        <td>Category</td>
+                                        <td>Update</td>
+                                        <td>Delete</td>
+                                        <td>Completed?</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var te in Model)
+                                    {
+                                        @if (te.Quadrant == 3)
+                                        {
+                                            <tr>
+                                                <td>@te.Task</td>
+                                                <td>@te.DueDate</td>
+                                                <td>@te.Category</td>
+                                                <td><a>Update</a></td>
+                                                <td><a>Delete</a></td>
+                                                <td><input type="checkbox" /></td>
 
-    </tbody>
-</table>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="table">
+                                Quadrant 4
+                                <thead class="font-weight-bold">
+                                    <tr>
+                                        <td>Task</td>
+                                        <td>Due Date</td>
+                                        <td>Category</td>
+                                        <td>Update</td>
+                                        <td>Delete</td>
+                                        <td>Completed?</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var te in Model)
+                                    {
+                                        @if (te.Quadrant == 4)
+                                        {
+                                            <tr>
+                                                <td>@te.Task</td>
+                                                <td>@te.DueDate</td>
+                                                <td>@te.Category.CategoryName</td>
+                                                <td><a>Update</a></td>
+                                                <td><a>Delete</a></td>
+                                                <td><input type="checkbox" /></td>
+
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+       
 <br/>
 
 
@@ -177,8 +181,22 @@
         <div class="col">Important</div>
         <div class="col">
             Quadrant 1
-            <br />Task #1
-            
+            @foreach (var te in Model)
+            {
+                @if (te.Quadrant == 1)
+                {
+                   
+                    @te.Task 
+                    @te.DueDate 
+                    @te.Category.CategoryName
+                    <a>Update</a>
+                    <a>Delete</a>
+                     <input type="checkbox" />
+
+                    
+                }
+            }
+
 
         </div>
         <div class="col">
