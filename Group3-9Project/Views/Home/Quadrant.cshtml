@@ -7,160 +7,163 @@
 <h1>Steven Covey's Time Management Matrix</h1>
 
 <br />
+<center><a asp-controller="Home" asp-action="Add" class="btn btn-primary">Add a Task</a></center>
+<br />
+<br />
 
-            <table class="table table-bordered ">
-                <thead class="font-weight-bold yellow">
-                    <tr>
-                        <td></td>
-                        <td>Urgent</td>
-                        <td>Not Urgent</td>
-                    </tr>
+<table class="table table-bordered ">
+    <thead class="font-weight-bold yellow">
+        <tr>
+            <td></td>
+            <td>Urgent</td>
+            <td>Not Urgent</td>
+        </tr>
 
-                </thead>
+    </thead>
 
-                <tbody>
-                    <tr>
-                        <td class="font-weight-bold yellow">Important</td>
-                        <td>
-                            <table class="table light">
-                                Quadrant 1
-                                <thead class="font-weight-bold">
-                                    <tr>
-                                        <td>Task</td>
-                                        <td>Due Date</td>
-                                        <td>Category</td>
-                                        <td>Update</td>
-                                        <td>Delete</td>
-                                     
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var te in Model)
-                                    {
-                                        @if (te.Quadrant == 1)
-                                        {
-                                            <tr>
-                                                <td>@te.Task</td>
-                                                <td>@te.DueDate</td>
-                                                <td>@te.Category.CategoryName</td>
-                                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@te.TaskId">Update</a></td>
-                                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@te.TaskId">Delete</a></td>
-                                               
-                                            </tr>
-                                        }
-                                    }
-                                </tbody>
-                            </table>
-                        </td>
+    <tbody>
+        <tr>
+            <td class="font-weight-bold yellow">Important</td>
+            <td>
+                <table class="table light">
+                    Quadrant 1
+                    <thead class="font-weight-bold">
+                        <tr>
+                            <td>Task</td>
+                            <td>Due Date</td>
+                            <td>Category</td>
+                            <td>Update</td>
+                            <td>Delete</td>
 
-                        <td>
-                            <table class="table light">
-                                Quadrant 2
-                                <thead class="font-weight-bold">
-                                    <tr>
-                                        <td>Task</td>
-                                        <td>Due Date</td>
-                                        <td>Category</td>
-                                        <td>Update</td>
-                                        <td>Delete</td>
-                                    
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var te in Model)
-                                    {
-                                        @if (te.Quadrant == 2)
-                                        {
-                                            <tr>
-                                                <td>@te.Task</td>
-                                                <td>@te.DueDate</td>
-                                                <td>@te.Category.CategoryName</td>
-                                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@te.TaskId">Update</a></td>
-                                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@te.TaskId">Delete</a></td>
-                                                
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var te in Model)
+                        {
+                            @if (te.Quadrant == 1)
+                            {
+                                <tr>
+                                    <td>@te.Task</td>
+                                    <td>@te.DueDate</td>
+                                    <td>@te.Category.CategoryName</td>
+                                    <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@te.TaskId">Update</a></td>
+                                    <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@te.TaskId">Delete</a></td>
 
-                                            </tr>
-                                        }
-                                    }
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="font-weight-bold yellow">Not Important</td>
-                        <td>
-                            <table class="table light">
-                                Quadrant 3
-                                <thead class="font-weight-bold">
-                                    <tr>
-                                        <td>Task</td>
-                                        <td>Due Date</td>
-                                        <td>Category</td>
-                                        <td>Update</td>
-                                        <td>Delete</td>
-                                      
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var te in Model)
-                                    {
-                                        @if (te.Quadrant == 3)
-                                        {
-                                            <tr>
-                                                <td>@te.Task</td>
-                                                <td>@te.DueDate</td>
-                                                <td>@te.Category.CategoryName</td>
-                                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@te.TaskId">Update</a></td>
-                                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@te.TaskId">Delete</a></td>
-                                                
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </td>
 
-                                            </tr>
-                                        }
-                                    }
-                                </tbody>
-                            </table>
-                        </td>
-                        <td>
-                            <table class="table light">
-                                Quadrant 4
-                                <thead class="font-weight-bold">
-                                    <tr>
-                                        <td>Task</td>
-                                        <td>Due Date</td>
-                                        <td>Category</td>
-                                        <td>Update</td>
-                                        <td>Delete</td>
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var te in Model)
-                                    {
-                                        @if (te.Quadrant == 4)
-                                        {
-                                            <tr>
-                                                <td>@te.Task</td>
-                                                <td>@te.DueDate</td>
-                                                <td>@te.Category.CategoryName</td>
-                                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@te.TaskId">Update</a></td>
-                                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@te.TaskId">Delete</a></td>
-                 
+            <td>
+                <table class="table light">
+                    Quadrant 2
+                    <thead class="font-weight-bold">
+                        <tr>
+                            <td>Task</td>
+                            <td>Due Date</td>
+                            <td>Category</td>
+                            <td>Update</td>
+                            <td>Delete</td>
 
-                                            </tr>
-                                        }
-                                    }
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var te in Model)
+                        {
+                            @if (te.Quadrant == 2)
+                            {
+                                <tr>
+                                    <td>@te.Task</td>
+                                    <td>@te.DueDate</td>
+                                    <td>@te.Category.CategoryName</td>
+                                    <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@te.TaskId">Update</a></td>
+                                    <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@te.TaskId">Delete</a></td>
 
 
-                </tbody>
-            </table>
-       
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="font-weight-bold yellow">Not Important</td>
+            <td>
+                <table class="table light">
+                    Quadrant 3
+                    <thead class="font-weight-bold">
+                        <tr>
+                            <td>Task</td>
+                            <td>Due Date</td>
+                            <td>Category</td>
+                            <td>Update</td>
+                            <td>Delete</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var te in Model)
+                        {
+                            @if (te.Quadrant == 3)
+                            {
+                                <tr>
+                                    <td>@te.Task</td>
+                                    <td>@te.DueDate</td>
+                                    <td>@te.Category.CategoryName</td>
+                                    <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@te.TaskId">Update</a></td>
+                                    <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@te.TaskId">Delete</a></td>
+
+
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <table class="table light">
+                    Quadrant 4
+                    <thead class="font-weight-bold">
+                        <tr>
+                            <td>Task</td>
+                            <td>Due Date</td>
+                            <td>Category</td>
+                            <td>Update</td>
+                            <td>Delete</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var te in Model)
+                        {
+                            @if (te.Quadrant == 4)
+                            {
+                                <tr>
+                                    <td>@te.Task</td>
+                                    <td>@te.DueDate</td>
+                                    <td>@te.Category.CategoryName</td>
+                                    <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@te.TaskId">Update</a></td>
+                                    <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@te.TaskId">Delete</a></td>
+
+
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
 
 
 
 
-            
+
+
 
