@@ -60,7 +60,7 @@ namespace Group3_9Project.Controllers
         [HttpGet]
         public IActionResult Edit(int taskid)
         {
-            ViewBag.Categories = TeContext.Category.ToList();
+            ViewBag.Category = TeContext.Category.ToList();
             var task = TeContext.TaskEntries.Single(x => x.TaskId == taskid);
             return View("Add", task);
         }
