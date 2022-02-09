@@ -348,7 +348,7 @@ paket-files/
 
 Migrations/
 
-.sqlite
+*.sqlite
 
 # FAKE - F# Make
 .fake/

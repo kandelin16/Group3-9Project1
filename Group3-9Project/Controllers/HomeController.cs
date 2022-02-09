@@ -73,6 +73,19 @@ namespace Group3_9Project.Controllers
             return RedirectToAction("Quadrant");
 
         }
+        [HttpGet]
+        public IActionResult Delete (int taskid)
+        {
+            var task = TeContext.TaskEntries.Single(x => x.TaskId == taskid);
+            return View(task);
+        }
+        [HttpPost]
+        public IActionResult Delete (TaskEntry te)
+        {
+            TeContext.TaskEntries.Remove(te);
+            TeContext.SaveChanges();
+            return RedirectToAction("Quadrant");
+        }
 
     }
 }
