@@ -2,6 +2,8 @@
     ViewData["Title"] = "Quadrant";
 }
 
+@model List<TaskEntry>
+
 <h1>Steven Covey's Time Management Matrix</h1>
 
 <br />
@@ -32,6 +34,8 @@
                     <tbody>
                        @foreach (var te in Model)
                        {
+                           @if (te.Quadrant == 1)
+                           {
                             <tr>
                                 <td>@te.Task</td>
                                 <td>@te.DueDate</td>
@@ -41,7 +45,8 @@
                                 <td><input type="checkbox" /></td>
 
                             </tr>
-                       }
+                               }
+                           }
                     </tbody>
                 </table></td>
 
@@ -59,13 +64,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Task #2</td>
-                            <td><a>Update</a></td>
-                            <td><a>Delete</a></td>
-                            <td><input type="checkbox" /></td>
+                        @foreach (var te in Model)
+                        {
+                            @if (te.Quadrant == 2)
+                            {
+                                <tr>
+                                    <td>@te.Task</td>
+                                    <td>@te.DueDate</td>
+                                    <td>@te.Category</td>
+                                    <td><a>Update</a></td>
+                                    <td><a>Delete</a></td>
+                                    <td><input type="checkbox" /></td>
 
-                        </tr>
+                                </tr>
+                            }
+                        }
                     </tbody>
                 </table>
             </td>
@@ -86,13 +99,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Task #3</td>
-                            <td><a>Update</a></td>
-                            <td><a>Delete</a></td>
-                            <td><input type="checkbox" /></td>
+                        @foreach (var te in Model)
+                        {
+                            @if (te.Quadrant == 3)
+                            {
+                                <tr>
+                                    <td>@te.Task</td>
+                                    <td>@te.DueDate</td>
+                                    <td>@te.Category</td>
+                                    <td><a>Update</a></td>
+                                    <td><a>Delete</a></td>
+                                    <td><input type="checkbox" /></td>
 
-                        </tr>
+                                </tr>
+                            }
+                        }
                     </tbody>
                 </table>
             </td>
@@ -110,13 +131,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Task #4</td>
-                            <td><a>Update</a></td>
-                            <td><a>Delete</a></td>
-                            <td><input type="checkbox" /></td>
+                        @foreach (var te in Model)
+                        {
+                            @if (te.Quadrant == 4)
+                            {
+                                <tr>
+                                    <td>@te.Task</td>
+                                    <td>@te.DueDate</td>
+                                    <td>@te.Category.CategoryName</td>
+                                    <td><a>Update</a></td>
+                                    <td><a>Delete</a></td>
+                                    <td><input type="checkbox" /></td>
 
-                        </tr>
+                                </tr>
+                            }
+                        }
                     </tbody>
                 </table>
             </td>

@@ -1,5 +1,6 @@
 ﻿using Group3_9Project.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,12 @@ namespace Group3_9Project.Controllers
 
         public IActionResult Quadrant()
         {
-            return View();
+            var TaskEntries = TeContext.TaskEntries
+                .Include(x => x.Category)
+                .Where(x => x.Completed == false)
+                .ToList();
+
+            return View(TaskEntries);
         }
 
 
