@@ -57,6 +57,22 @@ namespace Group3_9Project.Controllers
             return View(TaskEntries);
         }
 
+        [HttpGet]
+        public IActionResult Edit(int taskid)
+        {
+            ViewBag.Categories = TeContext.Category.ToList();
+            var task = TeContext.TaskEntries.Single(x => x.TaskId == taskid);
+            return View("Add", task);
+        }
+
+        [HttpPost]
+        public IActionResult Edit (TaskEntry te)
+        {
+            TeContext.Update(te);
+            TeContext.SaveChanges();
+            return RedirectToAction("Quadrant");
+
+        }
 
     }
 }
