@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group3_9Project.Models
 {
+    //separate Category
     public class Category
     {
         [Key]

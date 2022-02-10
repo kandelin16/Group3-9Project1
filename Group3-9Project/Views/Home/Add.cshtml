@@ -10,6 +10,7 @@
 <h2>Add a Task</h2>
 <br />
 
+<!--Add a task form-->
 <div>
     <form method="post">
         <label asp-for="Task">Task:</label>
@@ -39,6 +40,8 @@
         </select><br />
 
         <button type="submit">Submit Task</button>
+
+        <!--Show Validation-->
 
         <div id="summary" asp-validation-summary="All"></div>
     </form>

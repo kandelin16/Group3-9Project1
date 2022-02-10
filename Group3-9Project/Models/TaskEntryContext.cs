@@ -12,11 +12,12 @@ namespace Group3_9Project.Models
         {
             //blank for now
         }
-        //public DbSet<TaskEntryContext> Tasks { get; set; }
+        //Create data sets 
         public DbSet<TaskEntry> TaskEntries { get; set; } // not totally sure on this part
         public DbSet<Category> Category { get; set; }
         protected override void OnModelCreating(ModelBuilder mb)
         {
+            //seed data
             mb.Entity<Category>().HasData(
                 new Category { CategoryId = 1, CategoryName = "Home" },
                 new Category { CategoryId = 2, CategoryName = "School" },
